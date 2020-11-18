@@ -1,0 +1,18 @@
+
+kingRest是基于golang+gin+gorm封装的restful api框架
+
+特性：
+
+- 简单三层业务逻辑 model/service/controller
+- 升级validator至v10
+
+
+how to run?
+
+```shell
+go get github.com/zliang90/kingRest
+
+make
+```
+
+![启动示例](./docs/20201118-142719.png)

@@ -1,0 +1,44 @@
+---
+
+# 运行环境，dev/test/prod
+Env: dev
+
+# http服务器配置
+WebServer:
+  # listen address
+  Addr: 127.0.0.1:8086
+
+  # max header
+  MaxHeaderBytes:    1048576
+
+  # seconds timeout
+  ReadTimeout:       300
+  ReadHeaderTimeout: 300
+  WriteTimeout:      300
+  IdleTimeout:       600
+
+# 日志级别, debug/info/warning/error/fatal
+LogLevel: debug
+
+# 自定义api错误，默认在config目录下则不用改
+ApiErrorFile: config/errors.yaml
+
+# 自动巡检配置
+PatrolSettings:
+  # 从数据库加载Pending任务间隔
+  LoadTaskIntervalSec: 10
+
+  # 每天最大巡检次数
+  MaxPatrolTimesPerDay: 500
+
+  # 两次自动巡检最小间隔
+  MinStepIntervalSec: 30
+
+# 数据源配置
+DataSources:
+  default:
+    Addr: root:mysql@tcp(127.0.0.1:3306)/king_rest?charset=utf8&parseTime=True&loc=Local
+    Idle: 2
+    Max: 5
+    Debug: false
+
